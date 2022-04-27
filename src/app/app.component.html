@@ -1,25 +1,28 @@
 <form [formGroup]="myForm">
-     <div>
-       <label>Name</label>
-       <input type="text" formControlName="name">
-       <div invalidmessage="name">
-          <p *invalidType="'required'">Please provide name</p>
-       </div>
-     </div>
-     <div>
-       <label>Lastname</label>
-       <input type="text" formControlName="lastname">
-       <div invalidmessage="lastname">
-          <p *invalidType="'required'">Please provide lastname</p>
-       </div>
-      </div>
-      <div>
-       <label>Email</label>
-       <input type="text" formControlName="email">
-       <div invalidmessage="email">
-          <p *invalidType="'required'">Please provide email</p>
-          <p *invalidType="'email'">Please provide valid email</p>
-       </div>
-     </div>
-     <button type="submit">Submit</button>
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+    <div>
+      <p *ngIf="name.hasError('required')">Please provide name</p>
+    </div>
+    <div invalidmessage="name">
+      <p *invalidType="'required'">Please provide name</p>
+    </div>
+  </div>
+  <div>
+    <label>Lastname</label>
+    <input type="text" formControlName="lastname" />
+    <div invalidmessage="lastname">
+      <p *invalidType="'required'">Please provide lastname</p>
+    </div>
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="text" formControlName="email" />
+    <div invalidmessage="email">
+      <p *invalidType="'required'">Please provide email</p>
+      <p *invalidType="'email'">Please provide valid email</p>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
 </form>

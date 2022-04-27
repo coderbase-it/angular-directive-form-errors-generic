@@ -27,7 +27,8 @@ export class InvalidMessageDirective implements OnInit, OnDestroy{
         this.hasSubmitted = true;
     }));
     this.controlValue$ =  merge(this.control.valueChanges, of(''), formSubmit$ );
-    this.controlSubscription = this.controlValue$.subscribe(() => {
+    this.controlSubscription = this.controlValue$.subscribe((data) => {
+      console.log(data)
       this.setVisible();
     });
   }
